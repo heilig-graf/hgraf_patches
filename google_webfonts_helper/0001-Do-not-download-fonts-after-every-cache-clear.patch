@@ -1,0 +1,25 @@
+From c71d3773cf1046de8fe2427a8af3cbf9f41febce Mon Sep 17 00:00:00 2001
+From: timlievens <tim.lievens@heilig-graf.be>
+Date: Tue, 21 Sep 2021 10:59:40 +0200
+Subject: [PATCH] Do not download fonts after every cache clear
+
+---
+ google_webfonts_helper.module | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/google_webfonts_helper.module b/google_webfonts_helper.module
+index 7052028..ca8813d 100644
+--- a/google_webfonts_helper.module
++++ b/google_webfonts_helper.module
+@@ -31,7 +31,7 @@ function google_webfonts_helper_library_info_build() {
+ 
+   $libraries = [];
+   foreach ($google_webfonts as $google_webfont) {
+-    $google_webfont->validateFiles(TRUE);
++    $google_webfont->validateFiles(FALSE);
+     $style_pathname = $file_system_manager->getFontStylePathname($google_webfont->id());
+     $css_weight = $google_webfont->get('css_weight');
+     $libraries[$google_webfont->id()]['css'][$css_weight][$style_pathname] = [];
+-- 
+2.25.1
+
