@@ -1,0 +1,27 @@
+From 78090463f6ec2b4c83e6131a5a110951e3e5d2da Mon Sep 17 00:00:00 2001
+From: timlie <timlievens@gmail.com>
+Date: Wed, 19 Oct 2022 14:46:00 +0200
+Subject: [PATCH] Hide close button layer on videos
+
+---
+ css/blazy.photoswipe.theme.css | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/css/blazy.photoswipe.theme.css b/css/blazy.photoswipe.theme.css
+index f3a6402..9de2baf 100644
+--- a/css/blazy.photoswipe.theme.css
++++ b/css/blazy.photoswipe.theme.css
+@@ -71,6 +71,10 @@
+   background: rgba(0, 0, 0, 0.75);
+ }
+ 
++.pswp__item .media__icon--close {
++  visibility: hidden !important;
++}
++
+ .pswp__custom-caption a {
+   color: #fff;
+ }
+-- 
+2.25.1
+
